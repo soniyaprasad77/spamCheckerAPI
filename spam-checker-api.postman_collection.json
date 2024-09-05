@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "4b70ee8d-5809-4766-9791-a167a76bc936",
+		"name": "spam-checker-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32745580",
+		"_collection_link": "https://as7777-9200.postman.co/workspace/AS-Workspace~8f29d445-7a96-454a-bd0e-bfc4993f53ad/collection/32745580-4b70ee8d-5809-4766-9791-a167a76bc936?action=share&source=collection_link&creator=32745580"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John Wick\",\r\n    \"password\": \"John@123\",\r\n    \"phone\": \"9848012345\",\r\n    \"email\": \"johnwick@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"9848012345\",\r\n    \"password\": \"John@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_by_name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInBob25lIjoiOTg0ODAxMjM0NSIsImlhdCI6MTcyNTE2OTY4MiwiZXhwIjoxNzI1MTczMjgyfQ.PmQZzCEK4EAUBmflZZxIbd7kOPRdNis1DVrpacUH36o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/search/name?query=john",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"search",
+						"name"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "john"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_person_details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInBob25lIjoiOTg0ODAxMjM0NSIsImlhdCI6MTcyNTE2OTY4MiwiZXhwIjoxNzI1MTczMjgyfQ.PmQZzCEK4EAUBmflZZxIbd7kOPRdNis1DVrpacUH36o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/search/person/details?userId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"search",
+						"person",
+						"details"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_by_phone",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInBob25lIjoiOTg0ODAxMjM0NSIsImlhdCI6MTcyNTE2OTY4MiwiZXhwIjoxNzI1MTczMjgyfQ.PmQZzCEK4EAUBmflZZxIbd7kOPRdNis1DVrpacUH36o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/search/phone?phone=9848012345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"search",
+						"phone"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "9848012345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mark_as_spam",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInBob25lIjoiOTg0ODAxMjM0NSIsImlhdCI6MTcyNTE2OTY4MiwiZXhwIjoxNzI1MTczMjgyfQ.PmQZzCEK4EAUBmflZZxIbd7kOPRdNis1DVrpacUH36o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/spam/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"spam",
+						"report"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
